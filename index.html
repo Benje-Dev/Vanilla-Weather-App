@@ -28,8 +28,8 @@
               <div class="mb-3">
                 <input
                   type="search"
-                  class="form-control border-box"
-                  placeholder="search"
+                  class="form-control border-box search"
+                  placeholder="enter your city"
                   autofocus="on"
                 />
               </div>
@@ -39,26 +39,26 @@
           <div class="col-1"></div>
 
           <div class="col-2">
-            <button type="submit" class="btn btn-primary">search</button>
+            <button type="submit" class="btn btn-primary btn-search">search</button>
           </div>
           <div class="col-2">
-            <button type="submit" class="btn btn-primary">current</button>
+            <button type="submit" class="btn btn-primary btn-current">current</button>
           </div>
         </div>
 
         <!-- //////weather and location today/////// -->
         <div class="row justify-content-between">
-          <div class="col-7 border-box">
+          <div class="col-7 border-box acutal-weather">
             <div class="row justify-content-between">
-              <div class="col-4">
-                <h2>7 °C | <a href="#" class="fahrenheit">°F</a></h2>
+              <div class="col-5">
+                <h2>25 °C | <a href="#" class="fahrenheit">°F</a></h2>
                 <ul>
                   <li>humidity: 92%</li>
                   <li>wind: 11 km/h</li>
                 </ul>
               </div>
 
-              <div class="col-7">
+              <div class="col-6">
                   <i class="fas fa-sun icon-today"></i>
               </div>
             </div>
@@ -74,26 +74,26 @@
         </div>
 
         <!-- ///////Forecast////// -->
-        <div class="row justify-content-evenly">
-          <div class="col-2">
-            <h3>Mon<i class="fas fa-sun"></i></h3>
-            <p>21°C / 14°C</p>
+        <div class="row justify-content-evenly border-box forecast">
+          <div class="col-2 border-box forecast-small">
+            <h3>Mon<i class="fas fa-sun icon-forecast"></i></h3>
+            <p><strong>21°C</strong> / 14°C</p>
           </div>
-          <div class="col-2">
-            <h3>Tue<i class="fas fa-sun"></i></h3>
-            <p>21°C / 14°C</p>
+          <div class="col-2 border-box forecast-small">
+            <h3>Tue<i class="fas fa-cloud icon-forecast"></i></h3>
+            <p><strong>21°C</strong> / 14°C</p>
           </div>
-          <div class="col-2">
-            <h3>Wed<i class="fas fa-sun"></i></h3>
-            <p>21°C / 14°C</p>
+          <div class="col-2 border-box forecast-small">
+            <h3>Wed<i class="fas fa-smog icon-forecast"></i></h3>
+            <p><strong>21°C</strong> / 14°C</p>
           </div>
-          <div class="col-2">
-            <h3>Thu<i class="fas fa-sun"></i></h3>
-            <p>21°C / 14°C</p>
+          <div class="col-2 border-box forecast-small">
+            <h3>Thu<i class="fas fa-poo-storm icon-forecast"></i></h3>
+            <p><strong>21°C</strong> / 14°C</p>
           </div>
-          <div class="col-2">
-            <h3>Fri<i class="fas fa-sun"></i></h3>
-            <p>21°C / 14°C</p>
+          <div class="col-2 border-box forecast-small">
+            <h3>Fri<i class="fas fa-cloud-showers-heavy icon-forecast"></i></h3>
+          <p><strong>21°C</strong> / 14°C</p>
           </div>
         </div>
       </div>

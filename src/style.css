@@ -1,7 +1,27 @@
+body {
+  color: rgb(112, 107, 109);
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    radial-gradient(
+        at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%
+      )
+      #989898;
+  background-blend-mode: multiply, multiply;
+}
+
 h1,
 h2 {
   font-size: 39px;
   font-weight: 700;
+}
+
+h3 {
+  font-size: 20px;
 }
 
 ul {
@@ -13,6 +33,11 @@ li {
   list-style: none;
 }
 
+p {
+  margin: 0;
+  text-align: center;
+}
+
 footer {
   margin: 0 auto;
   width: 75%;
@@ -20,13 +45,14 @@ footer {
 
 .weather-app {
   margin: 30px auto;
-  padding: 20px;
+  padding: 40px 30px;
   width: 75%;
   border: 1px solid rgba(0, 0, 0);
   border-radius: 4px;
   display: block;
-  background: rgba(245, 245, 245, 0.2);
+  background: rgba(245, 245, 245, 1);
   color: rgb(112, 107, 109);
+ 
 }
 
 .border-box {
@@ -34,22 +60,50 @@ footer {
   border-radius: 15px;
   box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
   margin: 20px 10px;
-  padding: 15px;
+  padding: 15px 25px;
+}
+.search {
+  padding: 6px 25px;
+}
+
+.forecast {
+  padding: 10px 0px;
+}
+
+.forecast-small {
+  border: solid 1px rgb(112, 107, 109);
+
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  margin: 10px 5px;
+  padding: 10px 0px 10px 10px;
 }
 
 .btn {
   background: rgb(230, 62, 109);
   border-color: rgb(230, 62, 109);
+  border-radius: 15px;
   color: rgba(245, 245, 245, 1);
   box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
   border: solid 4px rgb(230, 62, 109);
-  padding: 6px 30px;
+  padding: 6px 45px;
   margin-top: 20px;
 }
 .btn:hover {
   background: rgba(245, 245, 245, 0.2);
   border-color: rgb(230, 62, 109);
   color: rgb(112, 107, 109);
+}
+
+.btn-search {
+  margin-left: -35px;
+}
+.btn-current {
+  margin-left: -30px;
+}
+
+.acutal-weather {
+  margin-left: 22px;
+  width: 535px;
 }
 .fahrenheit {
   color: rgba(230, 62, 109, 0.7);
@@ -58,13 +112,17 @@ footer {
 .fahrenheit:hover {
   color: rgba(230, 62, 109, 0.9);
 }
-.weather-location{
-    text-align: right;
+.weather-location {
+  text-align: right;
+  margin-right: 25px;
 }
 
-.icon-today{
-    font-size: 70px;
-    padding-top: 15px;
-    
-    
+.icon-today {
+  font-size: 80px;
+  padding: 0px 25px;
+}
+
+.icon-forecast {
+  padding: 20px 4px 24px 28px;
+  font-size: 30px;
 }

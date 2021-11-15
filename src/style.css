@@ -38,11 +38,6 @@ p {
   text-align: center;
 }
 
-footer {
-  margin: 0 auto;
-  width: 75%;
-}
-
 .weather-app {
   margin: 30px auto;
   padding: 40px 30px;
@@ -52,7 +47,7 @@ footer {
   display: block;
   background: rgba(245, 245, 245, 1);
   color: rgb(112, 107, 109);
- 
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 .border-box {
@@ -62,8 +57,9 @@ footer {
   margin: 20px 10px;
   padding: 15px 25px;
 }
-.search {
+.search-form {
   padding: 6px 25px;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 .forecast {
@@ -125,4 +121,17 @@ footer {
 .icon-forecast {
   padding: 20px 4px 24px 28px;
   font-size: 30px;
+}
+.footer {
+  margin: 0 auto;
+  width: 75%;
+  color: black;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.footer-link {
+  color: rgba(230, 62, 109, 0.9);
+}
+.footer-link:hover {
+  color: rgba(230, 62, 109, 1);
 }

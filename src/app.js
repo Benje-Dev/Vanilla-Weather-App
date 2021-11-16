@@ -1,15 +1,12 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = (date.getHours() < 10 ? `0` : ``) + date.getHours();
-  let minutes = (date.getMinutes()<10? `0` : ``) + date.getMinutes();
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+  let minutes = (date.getMinutes() < 10 ? `0` : ``) + date.getMinutes();
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   let day = days[date.getDay()];
 
-  let sentence = `${day} ${hours}:${minutes}`;
-  console.log(sentence)
+  return `${day} ${hours}:${minutes}`;
 }
-
-
 
 function showTemperature(response) {
   document.querySelector("#actual-temp").innerHTML = Math.round(

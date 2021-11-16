@@ -1,11 +1,16 @@
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
+function formatDate() {
+  let date = new Date();
   let hours = (date.getHours() < 10 ? `0` : ``) + date.getHours();
   let minutes = (date.getMinutes() < 10 ? `0` : ``) + date.getMinutes();
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   let day = days[date.getDay()];
 
+time = `${day} ${hours}:${minutes}`;
+console.log(time);
+
   return `${day} ${hours}:${minutes}`;
+
+  
 }
 
 function showTemperature(response) {
@@ -23,15 +28,12 @@ function showTemperature(response) {
     response.data.weather[0].description;
 
   let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate();
 }
 
 let apiKey = "15b6771cede26fdda2ef2045a9e7c815";
-// city = "Stuttgart";
-// apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Stuttgart&appid=${apiKey}&units=metric`;
-
-console.log(apiUrl);
+city = "Bangkok";
+apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(showTemperature);
 

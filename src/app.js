@@ -1,3 +1,5 @@
+////////Date & Weather Data//////////////
+
 function formatDate() {
   let date = new Date();
   let hours = (date.getHours() < 10 ? `0` : ``) + date.getHours();
@@ -5,12 +7,7 @@ function formatDate() {
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   let day = days[date.getDay()];
 
-time = `${day} ${hours}:${minutes}`;
-console.log(time);
-
   return `${day} ${hours}:${minutes}`;
-
-  
 }
 
 function showTemperature(response) {
@@ -31,18 +28,22 @@ function showTemperature(response) {
   dateElement.innerHTML = formatDate();
 }
 
-let apiKey = "15b6771cede26fdda2ef2045a9e7c815";
-city = "Bangkok";
-apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+/////////////Search Formula ////////////////
 
-axios.get(apiUrl).then(showTemperature);
 
-//////////////////////////////////////////
+function search(city) {
+  let apiKey = "15b6771cede26fdda2ef2045a9e7c815";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
 
-function getCity() {
-  let city = document.querySelector("input.value");
-  console.log(input);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#city-input");
+  search(cityElement.value);
 }
 
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", getCity);
+searchForm.addEventListener("submit", handleSubmit);
+
+search("Bangkok");

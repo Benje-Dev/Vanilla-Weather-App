@@ -47,3 +47,17 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 search("Bangkok");
+
+
+/////////////conversion Celsius Fahrenheit ////////////////
+
+function showFahrenheit(event) {
+event.preventDefault();
+let fahrenheit = Math.round((30*9/5)+32)
+let temperatureElement = document.querySelector("#actual-temp");
+temperatureElement.innerHTML = fahrenheit
+}
+
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheit)

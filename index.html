@@ -24,9 +24,9 @@
       <div class="weather-app">
         <!-- ///////search form////// -->
 
-        <div class="row">
-          <div class="col-7">
-            <form id="search-form">
+        <form id="search-form">
+          <div class="row">
+            <div class="col-7">
               <div class="mb-3">
                 <input
                   type="search"
@@ -37,25 +37,33 @@
                   id="city-input"
                 />
               </div>
-            </form>
-          </div>
+            </div>
 
-          <div class="col-1"></div>
+            <div class="col-1"></div>
 
-          <div class="col-2">
-            <button type="submit" class="btn btn-primary btn-search">search</button>
+            <div class="col-2">
+              <button type="submit" class="btn btn-primary btn-search">
+                search
+              </button>
+              <!-- <input type="submit" value="search" class="btn btn-primary btn-search"> -->
+            </div>
+            <div class="col-2">
+              <button type="submit" class="btn btn-primary btn-current">
+                current
+              </button>
+            </div>
           </div>
-          <div class="col-2">
-            <button type="submit" class="btn btn-primary btn-current">current</button>
-          </div>
-        </div>
+        </form>
 
         <!-- //////weather and location today/////// -->
         <div class="row justify-content-between">
           <div class="col-7 border-box acutal-weather">
             <div class="row justify-content-between">
               <div class="col-5">
-                <h2><span id="actual-temp"></span>°C | <a href="#" class="fahrenheit" id="fahrenheit">°F</a></h2>
+                <h2>
+                  <span id="actual-temp"></span>°C |
+                  <a href="#" class="fahrenheit" id="fahrenheit">°F</a>
+                </h2>
                 <ul>
                   <li>humidity: <span id="humidity"></span>%</li>
                   <li>wind: <span id="wind-speed"></span>km/h</li>
@@ -63,7 +71,7 @@
               </div>
 
               <div class="col-6">
-                  <i class="fas fa-sun icon-today"></i>
+                <i class="fas fa-sun icon-today"></i>
               </div>
             </div>
           </div>
@@ -97,7 +105,7 @@
           </div>
           <div class="col-2 border-box forecast-small">
             <h3>Fri<i class="fas fa-cloud-showers-heavy icon-forecast"></i></h3>
-          <p><strong>21°C</strong> / 14°C</p>
+            <p><strong>21°C</strong> / 14°C</p>
           </div>
         </div>
       </div>
@@ -107,7 +115,8 @@
       <footer class="footer">
         <a
           href="https://github.com/Benje-Dev/Vanilla-Weather-App"
-          target="_blank" class="footer-link"
+          target="_blank"
+          class="footer-link"
         >
           Open-source code
         </a>

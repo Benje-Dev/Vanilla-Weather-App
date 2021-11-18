@@ -104,13 +104,26 @@ p {
   margin-left: 22px;
   width: 535px;
 }
-.fahrenheit {
+.active{
+  color: rgba(112, 107, 109, 1);
+  text-decoration: none;
+  cursor:default;
+}
+.active:hover{
+  color: rgba(112, 107, 109, 1);
+}
+
+
+.passiv {
   color: rgba(230, 62, 109, 0.7);
   text-decoration: none;
 }
-.fahrenheit:hover {
+.passiv:hover {
   color: rgba(230, 62, 109, 0.9);
 }
+
+
+
 .weather-location {
   text-align: right;
   margin-right: 25px;

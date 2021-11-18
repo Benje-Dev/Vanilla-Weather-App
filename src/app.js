@@ -26,10 +26,11 @@ function showTemperature(response) {
 
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate();
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 /////////////Search Formula ////////////////
-
 
 function search(city) {
   let apiKey = "15b6771cede26fdda2ef2045a9e7c815";
@@ -46,18 +47,35 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-search("Bangkok");
-
-
 /////////////conversion Celsius Fahrenheit ////////////////
 
 function showFahrenheit(event) {
-event.preventDefault();
-let fahrenheit = Math.round((30*9/5)+32)
-let temperatureElement = document.querySelector("#actual-temp");
-temperatureElement.innerHTML = fahrenheit
+  event.preventDefault();
+  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.add("passiv");
+  fahrenheitLink.classList.remove("passiv");
+  let temperatureElement = document.querySelector("#actual-temp");
+  temperatureElement.innerHTML = fahrenheitTemperature;
 }
 
+function showCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.remove("passiv");
+  fahrenheitLink.classList.add("passiv");
+  let temperatureElement = document.querySelector("#actual-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
 
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", showFahrenheit)
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsius);
+
+search("Bangkok");

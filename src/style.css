@@ -138,6 +138,10 @@ p {
   padding: 20px 4px 24px 28px;
   font-size: 30px;
 }
+.forecast-temp-max{
+  font-weight: bold;
+}
+
 .footer {
   margin: 0 auto;
   width: 75%;

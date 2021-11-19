@@ -86,7 +86,7 @@ function showPosition(position) {
 
   let apiKey = "15b6771cede26fdda2ef2045a9e7c815";
   let apiUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrlCurrent);
+
   axios.get(apiUrlCurrent).then(showTemperature);
 }
 
@@ -98,4 +98,4 @@ function getCurrentPosition(event) {
 let currentButton = document.querySelector("#btn-current");
 currentButton.addEventListener("click", getCurrentPosition);
 
-search("Bangkok");
+search("Punta Cana");

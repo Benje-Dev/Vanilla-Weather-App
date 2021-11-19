@@ -42,7 +42,7 @@ p {
 }
 
 .weather-app {
-  margin: 50px auto;
+  margin: 100px auto;
   padding: 40px 30px;
   width: 75%;
   border-radius: 15px;
@@ -63,10 +63,6 @@ p {
 .search-form {
   padding: 6px 25px;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-}
-
-.forecast {
-  padding: 10px 0px;
 }
 
 .forecast-small {

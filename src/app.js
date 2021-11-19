@@ -99,3 +99,30 @@ let currentButton = document.querySelector("#btn-current");
 currentButton.addEventListener("click", getCurrentPosition);
 
 search("Punta Cana");
+
+
+
+/////////////Forecast ////////////////
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row justify-content-evenly">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2 border-box forecast-small">
+            <h3>${day}<i class="fas fa-sun icon-forecast"></i></h3>
+            <p>
+              <span class="forecast-temp-max">21°C</span> /
+              <span class="forecast-temp-min"> 14°C</span>
+            </p>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+displayForecast();

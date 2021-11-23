@@ -27,10 +27,20 @@ function showTemperature(response) {
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate();
 
+
+  
   celsiusTemperature = response.data.main.temp;
 
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  console.log(response.data.weather[0].icon);
 
-  getforecast(response.data.coord)
+
+  getforecast(response.data.coord);
 }
 
 /////////////Search Formula ////////////////
@@ -101,15 +111,12 @@ function getCurrentPosition(event) {
 let currentButton = document.querySelector("#btn-current");
 currentButton.addEventListener("click", getCurrentPosition);
 
-search("Punta Cana");
-
-
+search("Melbourne");
 
 /////////////Forecast ////////////////
 
 function displayForecast(response) {
-console.log(response.data.daily)
-
+  console.log(response.data.daily);
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -120,7 +127,11 @@ console.log(response.data.daily)
     forecastHTML =
       forecastHTML +
       ` <div class="col-2 border-box forecast-small">
-            <h3>${day}<i class="fas fa-sun icon-forecast"></i></h3>
+            <h3>${day}
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" id="icon">
+
+            
+            </h3>
             <p>
               <span class="forecast-temp-max">21°C</span> /
               <span class="forecast-temp-min"> 14°C</span>
@@ -133,17 +144,10 @@ console.log(response.data.daily)
 }
 
 function getforecast(coordinates) {
-  
   let apiKey = "15b6771cede26fdda2ef2045a9e7c815";
-  let lonForecast = coordinates.lon 
-  let latForecast = coordinates.lat 
+  let lonForecast = coordinates.lon;
+  let latForecast = coordinates.lat;
   let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${latForecast}&lon=${lonForecast}&appid=${apiKey}&units=metric`;
 
-axios.get(apiUrlForecast).then(displayForecast);
-
+  axios.get(apiUrlForecast).then(displayForecast);
 }
-
-
-
-
-

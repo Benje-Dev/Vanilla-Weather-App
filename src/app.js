@@ -28,6 +28,9 @@ function showTemperature(response) {
   dateElement.innerHTML = formatDate();
 
   celsiusTemperature = response.data.main.temp;
+
+
+  getforecast(response.data.coord)
 }
 
 /////////////Search Formula ////////////////
@@ -104,7 +107,10 @@ search("Punta Cana");
 
 /////////////Forecast ////////////////
 
-function displayForecast() {
+function displayForecast(response) {
+console.log(response.data.daily)
+
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row justify-content-evenly">`;
@@ -125,4 +131,19 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
 }
-displayForecast();
+
+function getforecast(coordinates) {
+  
+  let apiKey = "15b6771cede26fdda2ef2045a9e7c815";
+  let lonForecast = coordinates.lon 
+  let latForecast = coordinates.lat 
+  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${latForecast}&lon=${lonForecast}&appid=${apiKey}&units=metric`;
+
+axios.get(apiUrlForecast).then(displayForecast);
+
+}
+
+
+
+
+

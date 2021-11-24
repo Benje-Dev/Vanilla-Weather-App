@@ -100,15 +100,14 @@ p {
   margin-left: 22px;
   width: 535px;
 }
-.active{
+.active {
   color: rgba(112, 107, 109, 1);
   text-decoration: none;
-  cursor:default;
+  cursor: default;
 }
-.active:hover{
+.active:hover {
   color: rgba(112, 107, 109, 1);
 }
-
 
 .passiv {
   color: rgba(230, 62, 109, 0.7);
@@ -118,19 +117,17 @@ p {
   color: rgba(230, 62, 109, 0.9);
 }
 
-
-
 .weather-location {
   text-align: right;
   margin-right: 25px;
 }
 
-
 .icon-forecast {
   padding: 20px 4px 24px 28px;
-  font-size: 30px;
+  /* font-size: 30px; */
 }
-.forecast-temp-max{
+
+.forecast-temp-max {
   font-weight: bold;
 }
 

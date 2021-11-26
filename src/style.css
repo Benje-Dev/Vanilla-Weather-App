@@ -117,6 +117,10 @@ p {
   color: rgba(230, 62, 109, 0.9);
 }
 
+.icon-actual {
+  width: 95px;
+}
+
 .weather-location {
   text-align: right;
   margin-right: 25px;

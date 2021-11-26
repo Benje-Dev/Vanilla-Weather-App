@@ -108,7 +108,7 @@ function getCurrentPosition(event) {
 let currentButton = document.querySelector("#btn-current");
 currentButton.addEventListener("click", getCurrentPosition);
 
-search("Melbourne");
+search("Berlin");
 
 /////////////Forecast ////////////////
 

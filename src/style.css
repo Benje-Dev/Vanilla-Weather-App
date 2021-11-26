@@ -42,7 +42,7 @@ p {
 }
 
 .weather-app {
-  margin: 100px auto;
+  margin: 100px auto 40px auto;
   padding: 40px 30px;
   width: 75%;
   border-radius: 15px;
@@ -127,7 +127,7 @@ p {
 }
 
 .icon-forecast {
-  padding: 20px 4px 24px 28px;
+  padding: 10px 6px 10px 8px;
   /* font-size: 30px; */
 }
 

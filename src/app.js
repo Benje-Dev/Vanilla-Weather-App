@@ -4,7 +4,16 @@ function formatDate() {
   let date = new Date();
   let hours = (date.getHours() < 10 ? `0` : ``) + date.getHours();
   let minutes = (date.getMinutes() < 10 ? `0` : ``) + date.getMinutes();
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
   let day = days[date.getDay()];
 
   return `${day} ${hours}:${minutes}`;
@@ -30,12 +39,8 @@ function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
 
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `img/${response.data.weather[0].icon}.png`
-  );
+  iconElement.setAttribute("src", `img/${response.data.weather[0].icon}.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  console.log(response.data.weather[0].icon);
 
   getforecast(response.data.coord);
 }
@@ -132,9 +137,7 @@ function displayForecast(response) {
         forecastHTML +
         ` <div class="col-2 border-box forecast-small">
             <h3>${formatDay(forecastDay.dt)}
-            <img src="img/${
-              forecastDay.weather[0].icon
-            }.png" alt="${
+            <img src="img/${forecastDay.weather[0].icon}.png" alt="${
           forecastDay.weather[0].description
         }" class ="icon-forecast" id="icon">
             </h3>
